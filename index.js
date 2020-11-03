@@ -10,7 +10,7 @@ app.use(cors());
 const port = 5000;
 
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.jo990.mongodb.net/bsmrstu?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://physics5101:h6DigQWVJXpOJLOu@cluster0.jo990.mongodb.net/bsmrstu?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect(err => {
@@ -60,6 +60,5 @@ app.get('/', (req, res) =>{
     res.send('I am working')
 })
 
-app.listen(port)
+app.listen(process.env.PORT || port)
 
-// h6DigQWVJXpOJLOu     physics5101 
